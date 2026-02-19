@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class LayoutMaintenanceApp {
-    
+
     private Scanner sc;
     private User currentUser;
 
@@ -15,7 +15,7 @@ public class LayoutMaintenanceApp {
 
         while (true) {
             displayMainMenu();
-            
+
             int choice = sc.nextInt();
             sc.nextLine();
 
@@ -45,7 +45,7 @@ public class LayoutMaintenanceApp {
     private void handleLogin() {
         System.out.print("Enter Username: ");
         String username = sc.nextLine();
-        
+
         System.out.print("Enter Password: ");
         String password = sc.nextLine();
 

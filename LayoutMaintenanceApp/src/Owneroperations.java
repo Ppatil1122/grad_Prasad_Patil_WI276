@@ -10,7 +10,7 @@ public class Owneroperations {
     }
 
     // ========== OWNER MENU ==========
-    
+
     public void showMenu() {
         while (true) {
             System.out.println("\n===== OWNER MENU =====");
@@ -29,7 +29,9 @@ public class Owneroperations {
                 case 2 -> requestSiteUpdate();
                 case 3 -> makePayment();
                 case 4 -> viewPaymentHistory();
-                case 5 -> { return; }
+                case 5 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }

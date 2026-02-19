@@ -8,7 +8,7 @@ public class Adminoperations {
     }
 
     // ========== OWNER MANAGEMENT ==========
-    
+
     public void manageOwners() {
         while (true) {
             System.out.println("\n--- Owner Management ---");
@@ -27,7 +27,9 @@ public class Adminoperations {
                 case 2 -> addOwner();
                 case 3 -> editOwner();
                 case 4 -> removeOwner();
-                case 5 -> { return; }
+                case 5 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }
@@ -35,27 +37,27 @@ public class Adminoperations {
 
     private void addOwner() {
         System.out.println("\n--- Add New Owner ---");
-        
+
         System.out.print("Enter Name: ");
         String name = sc.nextLine();
-        
+
         System.out.print("Enter Username: ");
         String username = sc.nextLine();
-        
+
         System.out.print("Enter Password: ");
         String password = sc.nextLine();
-        
+
         System.out.print("Enter Phone: ");
         String phone = sc.nextLine();
-        
+
         System.out.print("Enter Email: ");
         String email = sc.nextLine();
-        
+
         System.out.print("Enter Address: ");
         String address = sc.nextLine();
 
         User newOwner = new User(name, username, password, phone, email, address, "OWNER");
-        
+
         if (Database.addOwner(newOwner)) {
             System.out.println("Owner added successfully!");
         } else {
@@ -65,26 +67,26 @@ public class Adminoperations {
 
     private void editOwner() {
         System.out.println("\n--- Edit Owner ---");
-        
+
         System.out.print("Enter Owner User ID to edit: ");
         int ownerId = sc.nextInt();
         sc.nextLine();
 
         System.out.print("Enter New Name (or press Enter to skip): ");
         String name = sc.nextLine();
-        
+
         System.out.print("Enter New Username (or press Enter to skip): ");
         String username = sc.nextLine();
-        
+
         System.out.print("Enter New Password (or press Enter to skip): ");
         String password = sc.nextLine();
-        
+
         System.out.print("Enter New Phone (or press Enter to skip): ");
         String phone = sc.nextLine();
-        
+
         System.out.print("Enter New Email (or press Enter to skip): ");
         String email = sc.nextLine();
-        
+
         System.out.print("Enter New Address (or press Enter to skip): ");
         String address = sc.nextLine();
 
@@ -97,7 +99,7 @@ public class Adminoperations {
 
     private void removeOwner() {
         System.out.println("\n--- Remove Owner ---");
-        
+
         System.out.print("Enter Owner User ID to remove: ");
         int ownerId = sc.nextInt();
 
@@ -109,7 +111,7 @@ public class Adminoperations {
     }
 
     // ========== SITE MANAGEMENT ==========
-    
+
     public void manageSites() {
         while (true) {
             System.out.println("\n--- Site Management ---");
@@ -128,7 +130,9 @@ public class Adminoperations {
                 case 2 -> addSite();
                 case 3 -> editSite();
                 case 4 -> removeSite();
-                case 5 -> { return; }
+                case 5 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }
@@ -136,27 +140,27 @@ public class Adminoperations {
 
     private void addSite() {
         System.out.println("\n--- Add New Site ---");
-        
+
         System.out.print("Enter Site Number: ");
         int siteNumber = sc.nextInt();
-        
+
         System.out.print("Enter Site Type (VILLA/APARTMENT/INDEPENDENT_HOUSE/OPEN_SITE): ");
         String siteType = sc.next().toUpperCase();
-        
+
         System.out.print("Enter Length (ft): ");
         int length = sc.nextInt();
-        
+
         System.out.print("Enter Width (ft): ");
         int width = sc.nextInt();
-        
+
         System.out.print("Enter Occupancy Status (OPEN/RENTED/SELF_OCCUPIED/VACANT/SOLD): ");
         String occupancy = sc.next().toUpperCase();
-        
+
         System.out.print("Enter Owner ID (or 0 for no owner): ");
         int ownerId = sc.nextInt();
 
         Site newSite = new Site(siteNumber, siteType, length, width, occupancy, ownerId == 0 ? null : ownerId);
-        
+
         if (Database.addSite(newSite)) {
             System.out.println("Site added successfully! Area: " + newSite.getAreaSqft() + " sqft");
         } else {
@@ -166,16 +170,16 @@ public class Adminoperations {
 
     private void editSite() {
         System.out.println("\n--- Edit Site ---");
-        
+
         System.out.print("Enter Site Number to edit: ");
         int siteNumber = sc.nextInt();
 
         System.out.print("Enter New Type (or 0 to skip): ");
         String type = sc.next();
-        
+
         System.out.print("Enter New Occupancy Status (or 0 to skip): ");
         String status = sc.next();
-        
+
         System.out.print("Enter New Owner ID (or -1 to skip, 0 to remove owner): ");
         int ownerId = sc.nextInt();
 
@@ -188,7 +192,7 @@ public class Adminoperations {
 
     private void removeSite() {
         System.out.println("\n--- Remove Site ---");
-        
+
         System.out.print("Enter Site Number to remove: ");
         int siteNumber = sc.nextInt();
 
@@ -200,7 +204,7 @@ public class Adminoperations {
     }
 
     // ========== MAINTENANCE MANAGEMENT ==========
-    
+
     public void manageMaintenance() {
         while (true) {
             System.out.println("\n--- Maintenance Management ---");
@@ -217,7 +221,9 @@ public class Adminoperations {
                 case 1 -> collectMaintenance();
                 case 2 -> viewPendingMaintenance();
                 case 3 -> approvePayment();
-                case 4 -> { return; }
+                case 4 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }
@@ -225,13 +231,13 @@ public class Adminoperations {
 
     private void collectMaintenance() {
         System.out.println("\n--- Collect Maintenance ---");
-        
+
         System.out.print("Enter Site Number: ");
         int siteNumber = sc.nextInt();
-        
+
         System.out.print("Enter Month (1-12): ");
         int month = sc.nextInt();
-        
+
         System.out.print("Enter Year: ");
         int year = sc.nextInt();
 
@@ -269,7 +275,7 @@ public class Adminoperations {
     }
 
     // ========== SITE UPDATE REQUESTS ==========
-    
+
     public void manageUpdateRequests() {
         while (true) {
             System.out.println("\n--- Site Update Requests ---");
@@ -284,7 +290,9 @@ public class Adminoperations {
             switch (choice) {
                 case 1 -> Database.viewPendingRequests();
                 case 2 -> approveRejectRequest();
-                case 3 -> { return; }
+                case 3 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }
@@ -293,7 +301,7 @@ public class Adminoperations {
     private void approveRejectRequest() {
         System.out.print("Enter Request ID: ");
         int requestId = sc.nextInt();
-        
+
         System.out.print("Approve or Reject? (1=Approve, 2=Reject): ");
         int choice = sc.nextInt();
 
@@ -313,7 +321,7 @@ public class Adminoperations {
     }
 
     // ========== ADMIN MENU ==========
-    
+
     public void showMenu() {
         while (true) {
             System.out.println("\n===== ADMIN MENU =====");
@@ -332,7 +340,9 @@ public class Adminoperations {
                 case 2 -> manageSites();
                 case 3 -> manageMaintenance();
                 case 4 -> manageUpdateRequests();
-                case 5 -> { return; }
+                case 5 -> {
+                    return;
+                }
                 default -> System.out.println("Invalid choice!");
             }
         }

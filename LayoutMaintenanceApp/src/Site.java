@@ -26,15 +26,40 @@ public class Site {
     }
 
     // Getters
-    public int getSiteId() { return siteId; }
-    public int getSiteNumber() { return siteNumber; }
-    public String getSiteType() { return siteType; }
-    public int getLengthFt() { return lengthFt; }
-    public int getWidthFt() { return widthFt; }
-    public int getAreaSqft() { return areaSqft; }
-    public String getOccupancyStatus() { return occupancyStatus; }
-    public Integer getOwnerId() { return ownerId; }
+    public int getSiteId() {
+        return siteId;
+    }
+
+    public int getSiteNumber() {
+        return siteNumber;
+    }
+
+    public String getSiteType() {
+        return siteType;
+    }
+
+    public int getLengthFt() {
+        return lengthFt;
+    }
+
+    public int getWidthFt() {
+        return widthFt;
+    }
+
+    public int getAreaSqft() {
+        return areaSqft;
+    }
+
+    public String getOccupancyStatus() {
+        return occupancyStatus;
+    }
+
+    public Integer getOwnerId() {
+        return ownerId;
+    }
 
     // Setters
-    public void setSiteId(int siteId) { this.siteId = siteId; }
+    public void setSiteId(int siteId) {
+        this.siteId = siteId;
+    }
 }
